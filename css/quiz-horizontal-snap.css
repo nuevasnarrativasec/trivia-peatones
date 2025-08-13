@@ -67,6 +67,7 @@
 .opcion {
   border: 1px solid #c9c9c9;
   border-radius: var(--radius);
+  color: #000;
   padding: 14px 16px;
   font: 1.1rem/1.2 'new_kansasregular';
   text-align: left;
@@ -188,10 +189,11 @@
 /* Mensaje dashed (se oculta si está vacío) */
 .mensaje{
   display: inline-block;
+  font: 1.1rem / 1.2'prelosemibold';
   padding: 14px;
   border: 2px dashed transparent;
   border-radius: 12px;
-      margin-bottom: 20px;
+  margin-bottom: 20px;
   font-size: 0.95rem;
   vertical-align: top;
 }
