@@ -1,0 +1,366 @@
+@font-face {
+    font-family: 'prelomedium';   
+    src: url('https://nuevasnarrativasec.github.io/trivia-impuesto-a-la-renta/fonts/Prelo-Medium-webfont.woff2') format('woff2'),
+         url('https://nuevasnarrativasec.github.io/trivia-impuesto-a-la-renta/fonts/Prelo-Medium-webfont.woff') format('woff');
+}
+@font-face {
+    font-family: 'prelosemibold';
+    src: url('https://nuevasnarrativasec.github.io/trivia-impuesto-a-la-renta/fonts/Prelo-SemiBold-webfont.woff2') format('woff2'),
+         url('https://nuevasnarrativasec.github.io/trivia-impuesto-a-la-renta/fonts/Prelo-SemiBold-webfont.woff') format('woff');
+}
+@font-face {
+    font-family: 'prelobold';
+    src: url('https://nuevasnarrativasec.github.io/trivia-impuesto-a-la-renta/fonts/Prelo-Bold-webfont.woff2') format('woff2'),
+         url('https://nuevasnarrativasec.github.io/trivia-impuesto-a-la-renta/fonts/Prelo-Bold-webfont.woff') format('woff');
+}
+@font-face {
+    font-family: 'preloextrabold';
+    src: url('https://nuevasnarrativasec.github.io/trivia-impuesto-a-la-renta/fonts/Prelo-ExtraBold-webfont.woff2') format('woff2'),
+         url('https://nuevasnarrativasec.github.io/trivia-impuesto-a-la-renta/fonts/Prelo-ExtraBold-webfont.woff') format('woff');
+}
+@font-face {
+    font-family: 'new_kansasregular';
+    src: url('../fonts/fonnts.com-new-kansas--webfont.woff2') format('woff2'),
+         url('../fonts/fonnts.com-new-kansas--webfont.woff') format('woff');
+}
+@font-face {
+    font-family: 'new_kansasbold';
+    src: url('../fonts/fonnts.com-new-kansas-bold-webfont.woff2') format('woff2'),
+         url('../fonts/fonnts.com-new-kansas-bold-webfont.woff') format('woff');
+}
+
+.clear{
+    clear: both;
+}
+
+body, html {    
+    margin: 0;    
+    padding: 0;   
+    font-display: swap; 
+    font-style: normal;   
+    font-weight: normal;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+body{
+    background-color: #fffef2;
+    background-image: url('../img/bg-trivia.jpg');
+    background-position: center 120%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+#header{
+    margin-bottom: 50px;
+    width: 100%;
+}
+    .header-comercio{   
+        background: #000;    
+        position: relative;
+        width: 100%;
+        z-index: 9999999;
+    }
+        .ctn-header-comercio{
+            margin: 0 auto;     
+            max-width: 1024px;
+            padding: 0 5px;
+            text-align: right;
+        }
+            .ctn-header-comercio a{
+                display: inline-block;                
+                text-indent: -9999px;
+            }
+                a.logo-comercio{
+                    background: url(https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/somos-35-anos-mejores-portadas-ecpm/img/logo-comercio.png?v2) no-repeat 0 0;
+                    background-size: 100%;
+                    display: none;
+                    height: 30px;
+                    margin-top: 10px;
+                    width: 110px;
+                }
+                #social{
+                        float: right;
+                        margin: 20px;
+                        position: absolute;
+                        right: 0;
+                        z-index: 600;
+                }
+                #social ul{
+                    display: inline-block;
+                    margin: 0 auto;
+                    padding: 0;
+                    vertical-align: middle;
+                }
+                    #social ul li{
+                        display: inline-block;
+                        margin: 0 3px;
+                        vertical-align: middle;
+                    }
+                        #social ul li a{
+                            height: 36px;
+                            width: 36px;
+                        }
+                        #fb{
+                            background: url(https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/abuso-infantil/img/fb-icon-negro.png?v2) no-repeat 0 0;
+                            background-size: 100% !important;
+                            border: none;
+                            display: inline-block;
+                            height: 36px;
+                            text-indent: -9999px;
+                            width: 36px;
+                        }
+                        #wst{                
+                            background: url(https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/abuso-infantil/img/wsp-icon-negro.png?v2) no-repeat 0 0 !important;
+                            background-size: 100% !important;
+                            border: none;
+                            display: none;
+                            height: 36px;
+                            text-indent: -9999px;
+                            width: 36px;
+                        }
+                        #tw{            
+                            background: url(https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/abuso-infantil/img/tw-icon-negro.png?v2) no-repeat 0 0 !important;
+                            background-size: 100% !important;
+                            border: none;
+                            display: inline-block;
+                            height: 36px;
+                            text-indent: -9999px;
+                            width: 36px;
+                        } 
+.main-portada{
+    background: url('../img/bg-portada.jpg') no-repeat center top;
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+    z-index: 50;
+}
+    .box-titular{
+        left: 50%;
+        position: absolute;
+        text-align: center;
+        top: 40%;
+
+        transform: translate(-50%,-50%);
+    }
+        .box-titular img{
+            display: block;
+            margin: 5px auto;
+            max-width: 140px;
+        }
+        .box-titular h1{
+            color: #000;
+            font: 6rem/1.3 'new_kansasbold';
+            margin: 10px auto;
+        }
+            .box-titular h1 span{
+                color: #fff;
+                display: block;
+                font: 2.4rem/1.2 'preloextrabold';
+                text-transform: uppercase;
+            }
+        .box-titular h2{
+            font: 1.6rem/1.3 'new_kansasregular';
+            margin: 0 auto;
+            max-width: 500px;
+        }
+            .box-titular h2 span{
+                font-family: 'new_kansasbold';
+            }
+        img.flecha-bajar{
+            cursor: pointer;
+            display: block;
+            margin: 80px auto 0;
+            max-width: 50px;
+        }
+.box-bajada{
+    border-bottom: 1px solid #c2c2c2;
+    margin: 50px auto;
+    max-width: 500px;
+    border-top: 1px solid #c2c2c2;
+}
+    .box-bajada h2{
+        font: 1.1rem/1.4 'new_kansasregular';
+        margin: 0 auto;
+        max-width: 400px;
+        padding: 40px 0;
+        text-align: center;
+    }
+        .box-bajada h2 span{
+            color: #BA68C8;
+        }
+
+#quiz {
+    box-sizing: border-box;
+    margin: auto;
+    max-width: 500px;  
+    min-height: 100vh;  
+    padding: 20px;
+    padding-top: 150px;
+}
+    #quiz h2{
+        color: #BA68C8;
+        font: 1.3rem/1.3 'prelosemibold';
+        text-align: center;
+    }
+    #quiz button {
+        background-color: #efefef;
+        border-radius: 10px;
+        border: none;
+        color: #000;
+        cursor: pointer;
+        display: block;
+        font: 1rem/1.3 'prelosemibold';
+        margin: 5px 0 20px;  
+        padding: 10px;
+        text-align: left;                
+        width: 100%;
+    }
+    #quiz #siguiente {
+        background-color: #ba68c8;
+        border: none;
+        color: white;
+        cursor: pointer;
+        margin: 10px auto 0 !important;    
+        max-width: 30%;   
+        padding: 10px; 
+        text-align: center !important; 
+    }
+        #quiz #siguiente:disabled {
+            background-color: gray;
+            cursor: not-allowed;
+            /** cambio **/
+        }
+    p#mensaje{
+        font: 1.1rem/1.4 'prelosemibold';
+    }
+    #quiz p{
+        text-align: center;
+    }
+        #quiz p:nth-child(2){
+            color: #ba68c8;
+            font: 1.5rem/1.2 'prelobold';      
+            margin: 10px auto;      
+        }
+        #quiz p:nth-child(4){
+            font: 1.1rem/1.4 'prelomedium';
+            margin: 20px auto;
+        }
+            #quiz p:nth-child(4) a{
+                color: #BA68C8;
+                font-family: 'prelobold';
+            }
+    #quiz #reset{
+        background-color: #ba68c8;
+        color: #fff;
+        cursor: pointer;
+        margin: 30px auto !important;
+        max-width: 30%;   
+        text-align: center !important;
+    }
+.footer{
+    background-color: #000;
+    padding: 40px 0;
+    position: relative;
+    text-align: center;
+    z-index: 50;
+}
+    .footer img{
+        display: block;
+        margin: 0 auto 50px;
+        max-width: 150px;
+    }
+    .footer p{
+        color: #fff;
+        font: 1.1rem/1.3 'prelomedium';   
+    }
+    .footer ul{
+        margin: 0 auto;
+        padding: 0;
+    }
+
+.resultado-mensaje{
+  margin-top: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.quiz-card p{
+    font-family: 'preloextrabold';
+    text-align: center;
+}
+p.resultado-mensaje{
+    font: 1.1rem/ 1.2 'prelomedium';
+}
+button#reset{
+    background-color: #000;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font: 1.1rem/ 1.2 'prelomedium';
+    margin: 30px auto;
+    padding: 10px;
+    text-align: center;
+}
+
+@media only screen and (max-width: 640px) {
+
+    #wst{
+        display: inline-block;
+    }
+    .main-portada{
+        background: url('../img/bg-portada-movil.jpg?v2') no-repeat center top;
+        background-size: cover;
+    }
+    .box-titular {
+        top: 35%;
+        width: 100%;
+    }
+        .box-titular h2{
+            padding: 0 20px;
+        }
+    .box-bajada h2{
+        font-size: 1.3rem;
+        padding: 40px 20px;
+    }
+    img.flecha-bajar{
+        margin: 30px auto 0; 
+    }
+    #quiz{
+        padding-bottom: 80px;
+    }
+    #quiz h2{
+        font-size: 1.5rem;
+    }
+    #quiz button,
+    p#mensaje{
+        font-size: 1.2rem;
+    }
+    #quiz p:nth-child(2){
+        font-size: 1.8rem;
+    }
+    #quiz p:nth-child(3){
+        font-size: 1.3rem;
+    }
+    #reset{
+        max-width: 60%;
+    }
+
+    .box-titular h1 {
+        color: #000;
+        font: 4rem/1 'new_kansasbold';
+        margin: 10px auto;
+    }
+
+    body #arrowNext{
+        top: 50px;
+    }
+
+}
+
+@media only screen and (max-height: 732px) {
+    .main-portada{
+        /*background: url('https://nuevasnarrativasec.github.io/trivia-impuesto-a-la-renta/img/bg-portada-732.jpg?v2') no-repeat center top;
+        background-size: cover;*/
+    }
+
+}

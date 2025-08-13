@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--Para que Google no indexe esto-->
+    <meta name="googlebot" content="noindex" />
+    <meta name="googlebot-news" content="nosnippet" />
+    <meta name="robots" content="noindex, nofollow" />
+    <!---->  
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia peatones</title>
+
+    <link rel="stylesheet" href="./css/style.css?v6">
+    <link rel="stylesheet" href="./css/quiz-horizontal-snap.css?v5">
+
+    <style>   
+        .ads__zocalo,
+        .ribbon__container,
+        .grippy-host,     
+        .skin-template-model0,
+        #gpt_zocalo, 
+        #clever-45754-sticky-footer-shadow,
+        #browsi_wrapper_0_ai_1_rc_0,
+        #browsi_wrapper_1_ai_1_rc_0,
+        #browsi_wrapper_2_ai_1_rc_0,
+        #browsi_wrapper_3_ai_1_rc_0,
+        #browsi_wrapper_4_ai_1_rc_0,
+        #browsi_wrapper_5_ai_1_rc_0,
+        #browsi_wrapper_6_ai_1_rc_0,
+        #browsi_wrapper_7_ai_1_rc_0,
+        #browsi_wrapper_8_ai_1_rc_0,
+        #browsi_wrapper_9_ai_1_rc_0,
+        #browsi_wrapper_10_ai_1_rc_0{
+            display: none !important;
+            height: 0 !important;
+        }  
+        .nav-d__main-scroll.scrolled{
+            z-index: 9999;
+        }
+    </style> 
+</head>
+<body>
+    <header>
+        <div class="header-comercio">
+            <div class="ctn-header-comercio">                
+                <div id="social">
+                    <button id="fb" class="sharer button" data-sharer="facebook" data-hashtag="" data-url="">Facebook</button>
+
+                    <button id="wst" class="sharer button" data-sharer="whatsapp" data-title="El Comercio" data-url="">Whatsapp</button>
+
+                    <button id="tw" class="sharer button" data-sharer="twitter" data-title="El Comercio" data-hashtags="" data-via='elcomercio_peru' data-url="">Twitter</button>
+                </div>
+            </div>            
+        </div>        
+    </header>
+
+    <div class="main-portada">
+        <div class="box-titular">
+            <img src="../img/senal.png" alt="" width="100%">
+            <h1>
+                Peatones alertas
+            </h1>
+            <h2>
+                ¿Conoces tus derechos, sabes qué debes hacer y qué no al cruzar la calle? <span>En esta trivia te lo contamos.</span>
+            </h2>
+            <img src="../img/flecha-bajar-negra.png" alt="" width="100%" class="flecha-bajar">
+        </div>        
+    </div>   
+
+    <div id="quizViewport">
+        <div id="quizTrack"></div>
+    </div>
+    <button id="arrowNext" aria-label="Siguiente" aria-disabled="true" disabled>→</button>
+
+    <div class="footer">
+        <img src="./img/logo-footer-blanco.png" alt="" width="100%">
+        <p>
+            Producción periodística, investigación y textos: 
+        </p>
+        <ul>
+            <li>
+                <p>
+                    Diseño: <br>
+                    Marcelo Hidalgo
+                </p>
+            </li>
+            <li>
+                <p>
+                    Programación: <br>
+                    Armando Scargglioni C.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Edición visual: <br>
+                    Angela Peña
+                </p>
+            </li>
+            <li>
+                <p>
+                    Producción general: <br>
+                    Gisella Salmón
+                </p>
+            </li>
+            <li>
+                <p>
+                    Director periodístico: <br>
+                    Juan Aurelio Arévalo
+                </p>
+            </li>
+        </ul>
+    </div>
+
+    <script src="../js/quiz-horizontal.js?v7"></script>    
+
+    <!-- compartir -->
+    <script>
+        function shareUrl(event) {
+            const button = event.target;
+            const url = button.getAttribute('data-url');
+            
+            const sharer = button.getAttribute('data-sharer');
+            let shareUrl = '';
+
+            switch (sharer) {
+            case 'facebook':
+                const fbHashtag = button.getAttribute('data-hashtag') || '';
+                shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}&hashtag=${encodeURIComponent(fbHashtag)}`;
+                break;
+                
+            case 'whatsapp':
+                const whatsappTitle = button.getAttribute('data-title');
+                shareUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(whatsappTitle + ' ' + url)}`;
+                break;
+                
+            case 'twitter':
+                const twitterTitle = button.getAttribute('data-title');
+                const twitterHashtags = button.getAttribute('data-hashtags');
+                const twitterVia = button.getAttribute('data-via');
+                shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(twitterTitle)}&url=${encodeURIComponent(url)}&hashtags=${twitterHashtags}&via=${twitterVia}`;
+                break;
+            }
+
+            window.open(shareUrl, '_blank');
+        }
+
+        document.querySelectorAll('.sharer').forEach(button => {
+            button.addEventListener('click', shareUrl);
+        });
+    </script>
+
+    <!-- flecha bajar -->
+    <script>
+        document.querySelector(".flecha-bajar").addEventListener("click", function () {
+            const quizElement = document.getElementById("quizViewport");
+            if (quizElement) {
+                quizElement.scrollIntoView({ behavior: "smooth" });
+            }
+        });
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,226 @@
+
+/* ===== Quiz Horizontal + Scroll Snap ===== */
+:root {
+  --card-max-width: 980px;
+  --pad: clamp(16px, 2.5vw, 32px);
+  --radius: 18px;
+}
+
+/* viewport */
+#quizViewport {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+/* track */
+#quizTrack {
+  display: flex;
+  width: 200%;
+  height: 100%;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  padding-top: 100px;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.slide {
+  flex: 0 0 100%;
+  display: flex;
+  flex-direction: column; /* apila card y mensaje */
+  align-items: center;    /* centra horizontal */
+  scroll-snap-align: start;
+}
+
+
+/* cada slide ocupa todo el ancho del viewport */
+.quiz-card {
+  position: relative;
+  max-width: 800px;
+  width: 100%;
+  background: #fff;
+  border: 4px solid #111;
+  border-radius: 24px;
+  box-sizing: border-box;
+  padding: 56px 20px 20px; /* espacio arriba para el badge */
+  margin-bottom: 12px;     /* separación con mensaje */
+}
+
+/* estética rápida */
+.quiz-card h2 {
+  font: 1.6rem/1.2 'new_kansasbold';
+  text-align: center;
+  margin: 10px auto;
+}
+.opciones {
+  display: grid;
+  gap: 12px;
+  max-width: var(--card-max-width);
+  margin-inline: auto;
+  width: 100%;
+}
+.opcion {
+  border: 1px solid #c9c9c9;
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  font: 1.1rem/1.2 'new_kansasregular';
+  text-align: left;
+  cursor: pointer;
+  transition: transform .12s ease, box-shadow .12s ease;
+  background: #fff;
+}
+.opcion-letra {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;  /* tamaño del círculo */
+  height: 28px;
+  border-radius: 50%;
+  background: #000;
+  color: #fff;
+  font-weight: bold;
+  margin-right: 8px;
+  font-size: 0.9rem; /* ajusta tamaño de letra */
+  flex-shrink: 0;
+}
+.opcion:disabled { opacity: .85; cursor: default; }
+.opcion:hover:not(:disabled) { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(0,0,0,.08); }
+
+.opcion.is-correct { background: #baf7a4; border-color: #2f7d1b; }
+.opcion.is-wrong   { background: #ffc1c1; border-color: #8c1a1a; }
+
+
+.mensaje {
+  max-width: 800px;
+  width: 100%;
+  padding: 12px;
+  border: 2px dashed transparent;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  text-align: center;
+  margin: 85px 20px 0;
+  max-width: 200px;
+}
+
+.msg-correcto {
+  border-color: #4CAF50; /* verde */
+  color: #2E7D32;
+}
+
+.msg-incorrecto {
+  border-color: #E53935; /* rojo */
+  color: #B71C1C;
+}
+
+/* Flecha amarilla (puedes reemplazar por tu SVG/imagen) */
+#arrowNext {
+  position: fixed;
+  right: clamp(12px, 2vw, 20px);
+  top: 50%;
+  transform: translateY(-50%);
+  height: 64px;
+  width: 64px;
+  border-radius: 14px;
+  border: 0;
+  background: #ffcf33;
+  box-shadow: 0 5px 18px rgba(0,0,0,.18);
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 40;
+}
+#arrowNext[disabled],
+#arrowNext[aria-disabled="true"] {
+  filter: grayscale(.4);
+  opacity: .5;
+  pointer-events: none;
+}
+
+/* Layout del fondo y bocadillo tipo tarjeta */
+.quiz-card {
+  background: #fff;
+  border: 4px solid #111;
+  border-radius: 24px;
+  max-width: 600px;
+  min-height: 400px;
+  margin: 0 auto 50px;
+}
+
+.q-badge{
+  position:absolute;
+  top:0;left:50%;
+  transform:translate(-50%,-50%);
+  width:56px;height:56px;
+  border-radius:50%;
+  background:#000;
+  color:#fff;
+  border:4px solid #111;
+  display:grid;
+  place-items:center;
+  font: 1.6rem/1.2 'new_kansasbold';
+}
+.opcion{cursor:pointer}
+
+/* Contenedor debajo de la tarjeta: ilustración + mensaje */
+.feedback-row{
+  max-width: 900px;
+  text-align: center;
+  width: 100%;  
+}
+
+/* Ilustración */
+.feedback-fig{ 
+  margin: 0; 
+    display: inline-block;
+    vertical-align: top;
+}
+.feedback-illustration{
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Mensaje dashed (se oculta si está vacío) */
+.mensaje{
+  display: inline-block;
+  padding: 14px;
+  border: 2px dashed transparent;
+  border-radius: 12px;
+      margin-bottom: 20px;
+  font-size: 0.95rem;
+  vertical-align: top;
+}
+.mensaje:empty{ display:none; }  /* no ocupa espacio antes de responder */
+.msg-correcto{
+  border-color: #4CAF50;
+  color: #2E7D32;
+}
+.msg-incorrecto{
+  border-color: #E53935;
+  color: #B71C1C;
+}
+
+
+/* Mobile safe padding on the right so arrow no tape opciones */
+@media (max-width: 768px) {
+  /*.quiz-card{ padding-right: calc(var(--pad) + 56px); }*/
+
+  .quiz-card{
+    min-height: 470px;
+    max-width: 95%;
+  }
+
+
+  .feedback-row{
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+}
+
+
