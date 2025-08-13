@@ -474,20 +474,31 @@ function nextCard() {
 }
 
 // Helper: construye el mensaje final según rangos
-function getResultMessage(correctas, total) {
-  // Rangos calculados por porcentaje para que sirva con cualquier total
-  const t1 = Math.floor(total * 0.30); // ~30%  -> con 17 => 5
-  const t2 = Math.floor(total * 0.60); // ~60%  -> con 17 => 10
-  const t3 = Math.floor(total * 0.85); // ~85%  -> con 17 => 14
+function getResultData(correctas, total) {
+  const t1 = Math.floor(total * 0.30); // ~30%
+  const t2 = Math.floor(total * 0.60); // ~60%
+  const t3 = Math.floor(total * 0.85); // ~85%
 
   if (correctas <= t1) {
-    return "Mejor quédate en casa ✋";
+    return {
+      msg: "Mejor quédate en casa ✋",
+      img: "https://nuevasnarrativasec.github.io/trivia-peatones/img/0-4-respuesta.png"
+    };
   } else if (correctas <= t2) {
-    return "Ten cuidado en las calles y repasa las normas ⚠";
+    return {
+      msg: "Ten cuidado en las calles y repasa las normas ⚠",
+      img: "https://nuevasnarrativasec.github.io/trivia-peatones/img/5-9-respuesta.png"
+    };
   } else if (correctas <= t3) {
-    return "¡Eres un peatón informado y responsable! 🤗";
+    return {
+      msg: "¡Eres un peatón informado y responsable! 🤗",
+      img: "https://nuevasnarrativasec.github.io/trivia-peatones/img/10-16-respuesta.png"
+    };
   } else {
-    return "¡Eres un peatón informado y responsable! 🤗";
+    return {
+      msg: "¡Eres un peatón informado y responsable! 🤗",
+      img: "https://nuevasnarrativasec.github.io/trivia-peatones/img/10-16-respuesta.png"
+    };
   }
 }
 
@@ -507,10 +518,22 @@ function showResult() {
   const p = document.createElement('p');
   p.textContent = `Respuestas correctas: ${respuestasCorrectas} de ${total}`;
 
+  // Obtener mensaje + imagen según resultado
+  const resultData = getResultData(respuestasCorrectas, total);
+
+  // Imagen de resultado
+  const imgResult = document.createElement('img');
+  imgResult.src = resultData.img;
+  imgResult.alt = "Resultado del test";
+  imgResult.style.display = 'block';
+  imgResult.style.margin = '12px auto';
+  imgResult.style.maxWidth = '120px';
+  imgResult.style.height = 'auto';
+
   // Mensaje personalizado
   const pMsg = document.createElement('p');
   pMsg.className = 'resultado-mensaje';
-  pMsg.textContent = getResultMessage(respuestasCorrectas, total);
+  pMsg.textContent = resultData.msg;
 
   const btn = document.createElement('button');
   btn.id = 'reset';
@@ -518,13 +541,14 @@ function showResult() {
   btn.textContent = 'Reiniciar Test';
   btn.addEventListener('click', resetQuiz);
 
-  card.append(h, p, pMsg, btn);
+  card.append(h, p, imgResult, pMsg, btn);
   slide.appendChild(card);
   track.appendChild(slide);
 
   goToIndex(track.children.length - 1, true);
   setArrowEnabled(false);
 }
+
 
 function resetQuiz() {
   respuestasCorrectas = 0;
