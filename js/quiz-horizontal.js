@@ -292,28 +292,28 @@ function renderQuiz() {
   track.innerHTML = '';
 
   preguntas.forEach((q, idx) => {
-    // contenedor a pantalla completa (para centrado)
+    // Slide a ancho completo
     const slide = document.createElement('div');
     slide.className = 'slide';
     slide.dataset.index = String(idx);
     slide.dataset.answered = '0';
 
-    // tarjeta centrada
+    // Card centrada
     const card = document.createElement('section');
     card.className = 'quiz-card';
 
-    // badge de número (editable via q.numero)
+    // Badge
     const badge = document.createElement('div');
     badge.className = 'q-badge';
     badge.textContent = (q.numero ?? (idx + 1));
     card.appendChild(badge);
 
-    // pregunta
+    // Título
     const h = document.createElement('h2');
     h.textContent = q.pregunta;
     card.appendChild(h);
 
-    // imagen superior (opcional) — si la usas como ícono/emoji de la pregunta
+    // Imagen superior opcional (si la usas)
     if (q.imagen) {
       const img = document.createElement('img');
       img.src = q.imagen;
@@ -325,7 +325,7 @@ function renderQuiz() {
       card.appendChild(img);
     }
 
-    // opciones
+    // Opciones
     const optionsWrap = document.createElement('div');
     optionsWrap.className = 'opciones';
 
@@ -334,30 +334,26 @@ function renderQuiz() {
       b.className = 'opcion';
       b.type = 'button';
 
-      // extraer la letra antes del punto (ej: "A." -> "A")
+      // "A. Texto" -> letra + texto
       const letra = txt.trim().charAt(0);
       const textoOpcion = txt.replace(/^[A-Z]\.\s*/, '');
-
       b.innerHTML = `<span class="opcion-letra">${letra}</span> ${textoOpcion}`;
+
       b.addEventListener('click', () => handleSelect(slide, b, i));
 
-      // desde la 2da pregunta en adelante, desactivadas hasta responder la anterior
-      if (idx > 0) b.disabled = true;
-
+      if (idx > 0) b.disabled = true; // bloqueo secuencial
       optionsWrap.appendChild(b);
     });
 
-    // meter opciones en la card
-    card.appendChild(optionsWrap);
+    // Contenedor de feedback DEBAJO del grupo de opciones
+    const feedbackContainer = document.createElement('div');
+    feedbackContainer.className = 'feedback-container';
 
-    // Añadir la card al slide (queda arriba, junto al número)
+    // Montaje
+    card.append(optionsWrap, feedbackContainer);
     slide.appendChild(card);
 
-    // === Bloque inferior: ilustración + mensaje ===
-    const feedbackRow = document.createElement('div');
-    feedbackRow.className = 'feedback-row';
-
-    // Ilustración debajo (según tu ejemplo)
+    // Ilustración inferior (opcional)
     if (q.ilustracion) {
       const fig = document.createElement('figure');
       fig.className = 'feedback-fig';
@@ -366,23 +362,12 @@ function renderQuiz() {
       imgUnder.src = q.ilustracion;
       imgUnder.alt = 'Ilustración de apoyo';
       fig.appendChild(imgUnder);
-      feedbackRow.appendChild(fig);
+      slide.appendChild(fig);
     }
 
-    // Mensaje dashed (inicia vacío)
-    const msg = document.createElement('p');
-    msg.className = 'mensaje';
-    msg.textContent = '';
-    feedbackRow.appendChild(msg);
-
-    // Añadir bloque inferior al slide
-    slide.appendChild(feedbackRow);
-
-    // Por último, agregar el slide al track
     track.appendChild(slide);
   });
 
-  // ir a la primera y bloquear flecha
   goToIndex(0, false);
   setArrowEnabled(false);
 }
@@ -394,7 +379,7 @@ function handleSelect(slide, button, optionIndex) {
   const correct = preguntas[idx].correcta;
   const isCorrect = optionIndex === correct;
 
-  // colorear selección
+  // Colorear selección
   if (isCorrect) {
     button.classList.add('is-correct');
     respuestasCorrectas += 1;
@@ -402,39 +387,40 @@ function handleSelect(slide, button, optionIndex) {
     button.classList.add('is-wrong');
   }
 
-  // bloquear todas las opciones de esta tarjeta
+  // Bloquear todas las opciones de esta tarjeta
   const all = slide.querySelectorAll('button.opcion');
   all.forEach(b => (b.disabled = true));
 
-  // feedback (fuera de la card)
-  const p = slide.querySelector('.mensaje');
+  // Feedback debajo del grupo de opciones
+  const feedbackContainer = slide.querySelector('.feedback-container');
+  feedbackContainer.innerHTML = ''; // limpia por si acaso
+
+  const p = document.createElement('p');
+  p.className = 'mensaje';
   p.textContent = preguntas[idx].mensaje[optionIndex] || '';
   p.classList.toggle('msg-correcto', isCorrect);
   p.classList.toggle('msg-incorrecto', !isCorrect);
 
+  feedbackContainer.appendChild(p);
+
   slide.dataset.answered = '1';
-
-    // 🔹 Scroll suave hacia el mensaje si estamos en pantallas pequeñas
-    /*if (window.innerWidth <= 768) {
-        setTimeout(() => {
-            const offset = 120; // píxeles desde el top
-            const elementTop = p.getBoundingClientRect().top + window.scrollY;
-            window.scrollTo({
-            top: elementTop - offset,
-            behavior: 'smooth'
-            });
-        }, 150);
-    }*/
-
-  // activar flecha para avanzar
   setArrowEnabled(true);
 
-  // habilitar la siguiente pregunta solo si existe y aún no fue contestada
+  // Habilitar siguiente pregunta (si existe y no está contestada)
   const nextSlide = slide.nextElementSibling;
   if (nextSlide && nextSlide.dataset.answered !== '1') {
     const nextOptions = nextSlide.querySelectorAll('button.opcion');
     nextOptions.forEach(b => (b.disabled = false));
   }
+
+  // Scroll controlado en móvil hacia el feedback, con offset
+  /*if (window.innerWidth <= 768) {
+    setTimeout(() => {
+      const offset = 120; // px desde el top
+      const top = feedbackContainer.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({ top: top - offset, behavior: 'smooth' });
+    }, 150);
+  }*/
 }
 
 function setArrowEnabled(enabled) {
