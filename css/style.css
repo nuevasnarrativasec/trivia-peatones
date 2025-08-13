@@ -20,13 +20,13 @@
 }
 @font-face {
     font-family: 'new_kansasregular';
-    src: url('../fonts/fonnts.com-new-kansas--webfont.woff2') format('woff2'),
-         url('../fonts/fonnts.com-new-kansas--webfont.woff') format('woff');
+    src: url('https://nuevasnarrativasec.github.io/trivia-peatones/fonts/fonnts.com-new-kansas--webfont.woff2') format('woff2'),
+         url('https://nuevasnarrativasec.github.io/trivia-peatones/fonts/fonnts.com-new-kansas--webfont.woff') format('woff');
 }
 @font-face {
     font-family: 'new_kansasbold';
-    src: url('../fonts/fonnts.com-new-kansas-bold-webfont.woff2') format('woff2'),
-         url('../fonts/fonnts.com-new-kansas-bold-webfont.woff') format('woff');
+    src: url('https://nuevasnarrativasec.github.io/trivia-peatones/fonts/fonnts.com-new-kansas-bold-webfont.woff2') format('woff2'),
+         url('https://nuevasnarrativasec.github.io/trivia-peatones/fonts/fonnts.com-new-kansas-bold-webfont.woff') format('woff');
 }
 
 .clear{

@@ -20,7 +20,7 @@ const preguntas = [
             "¡Incorrecto! Esa es la calzada o pista.",
             "¡Incorrecto! Esa es una berma o jardín."
         ],
-        ilustracion: "../img/bg-pregunta-1.png?v2"  
+        ilustracion: "https://nuevasnarrativasec.github.io/trivia-peatones/img/bg-pregunta-1.png?v2"  
     },
     { 
         numero: "2",
@@ -36,7 +36,7 @@ const preguntas = [
             "¡Incorrecto! La zona peatonal es la acera o vereda.",
             "¡Incorrecto! Las señales verticales no se colocan en la calzada."
         ],
-        ilustracion: "../img/bg-pregunta-2.png?v2" 
+        ilustracion: "https://nuevasnarrativasec.github.io/trivia-peatones/img/bg-pregunta-2.png?v2" 
     },
     { 
         numero: "3",
@@ -52,7 +52,7 @@ const preguntas = [
             "¡Incorrecto! No definen la berma. No es para estacionar vehículos. Tampoco es una línea, sino un espacio para peatones o plantas.",
             "¡Incorrecto! No definen la berma. No es para estacionar vehículos. Tampoco es una línea, sino un espacio para peatones o plantas."
         ],
-        ilustracion: "../img/bg-pregunta-2.png?v2"  
+        ilustracion: "https://nuevasnarrativasec.github.io/trivia-peatones/img/bg-pregunta-2.png?v2"  
     },
     { 
         numero: "4",
@@ -68,7 +68,7 @@ const preguntas = [
             "¡Correcto! Es una serie de franjas pintadas para cruzar.",
             "¡Incorrecto! Un crucero peatonal no es una calle, sino un espacio para cruzar la pista."
         ],
-        ilustracion: "../img/bg-pregunta-4.png?v2"  
+        ilustracion: "https://nuevasnarrativasec.github.io/trivia-peatones/img/bg-pregunta-4.png?v2"  
     },
     { 
         numero: "5",
@@ -84,7 +84,7 @@ const preguntas = [
             "¡Correcto! La luz roja es alto total al tránsito peatonal.",
             "¡Incorrecto! Hacer eso es una infracción."
         ],
-        ilustracion: "../img/bg-pregunta-5.png?v2"
+        ilustracion: "https://nuevasnarrativasec.github.io/trivia-peatones/img/bg-pregunta-5.png?v2"
     },
     { 
         numero: "6",
@@ -100,7 +100,7 @@ const preguntas = [
             "¡Incorrecto! Además de ser una infracción al tránsito peatonal, también es una conducta peligrosa.",
             "¡Incorrecto! Está acción podría generar un accidente."
         ],
-         ilustracion: "../img/bg-pregunta-6.png?v2"
+         ilustracion: "https://nuevasnarrativasec.github.io/trivia-peatones/img/bg-pregunta-6.png?v2"
     },
     { 
         numero: "7",
@@ -116,7 +116,7 @@ const preguntas = [
             "¡Incorrecto! Muchas personas han resultado heridas o fallecidas por cometer esta infracción.",
             "¡Incorrecto! Es una práctica peligrosa e ilegal."
         ],
-         ilustracion: "../img/bg-pregunta-7.png?v2"
+         ilustracion: "https://nuevasnarrativasec.github.io/trivia-peatones/img/bg-pregunta-7.png?v2"
     },
     { 
         numero: "8",
@@ -132,7 +132,7 @@ const preguntas = [
             "¡Incorrecto! No tener contacto visual con choferes y otros peatones puede ser riesgoso.",
             "¡Incorrecto! Gritar no salvará tu vida en caso un vehículo este próximo a atropellarte."
         ],
-         ilustracion: "../img/bg-pregunta-8.png?v2" 
+         ilustracion: "https://nuevasnarrativasec.github.io/trivia-peatones/img/bg-pregunta-8.png?v2" 
     },
     { 
         numero: "9",
@@ -148,7 +148,7 @@ const preguntas = [
             "¡Correcto! Advierte cruce cercano.",
             "¡Incorrecto! No necesariamente una zona con flujo de peatones tiene un límite de 30 km/h."
         ],
-         ilustracion: "../img/bg-pregunta-9.png?v2" 
+         ilustracion: "https://nuevasnarrativasec.github.io/trivia-peatones/img/bg-pregunta-9.png?v2" 
     },
     { 
         numero: "10",
@@ -164,7 +164,7 @@ const preguntas = [
             "¡Correcto! Solo es para cruzar, no para circular por ellas.",
             "¡Incorrecto! Puede generar un impacto entre el ciclista y el peatón."
         ],
-        ilustracion: "../img/bg-pregunta-10.png?v2"
+        ilustracion: "https://nuevasnarrativasec.github.io/trivia-peatones/img/bg-pregunta-10.png?v2"
     },
     { 
         numero: "11",
@@ -180,7 +180,7 @@ const preguntas = [
             "¡Correcto! El verde parpadeante indica que está por cambiar a rojo.",
             "¡Incorrecto! Además de ser una infracción, hay riesgo de atropello o choque."
         ],
-         ilustracion: "../img/bg-pregunta-11.png?v2" 
+         ilustracion: "https://nuevasnarrativasec.github.io/trivia-peatones/img/bg-pregunta-11.png?v2" 
     },
     { 
         numero: "12",
@@ -196,7 +196,7 @@ const preguntas = [
             "¡Incorrecto! Permanecer de pie en la pista es riesgoso.",
             "¡Incorrecto! Además de ser una infracción, podría ocasionar un accidente."
         ],
-        ilustracion: "../img/bg-pregunta-12.png?v2" 
+        ilustracion: "https://nuevasnarrativasec.github.io/trivia-peatones/img/bg-pregunta-12.png?v2" 
     },
     { 
         numero: "13",
@@ -212,7 +212,7 @@ const preguntas = [
             "¡Correcto! Para el peatón, salir por la acera reduce riesgo.",
             "¡Incorrecto! Esta acción puede producir un atropello de otros vehículos circulando."
         ],
-        ilustracion: "../img/bg-pregunta-13.png?v2" 
+        ilustracion: "https://nuevasnarrativasec.github.io/trivia-peatones/img/bg-pregunta-13.png?v2" 
     },
     { 
         numero: "14",
@@ -228,7 +228,7 @@ const preguntas = [
             "¡Incorrecto! La señal no tiene nada que ver con niños jugando.",
             "¡Incorrecto! La señal no significa cierre de vía peatonal."
         ],
-        ilustracion: "../img/bg-pregunta-14.png?v2"
+        ilustracion: "https://nuevasnarrativasec.github.io/trivia-peatones/img/bg-pregunta-14.png?v2"
     },
     { 
         numero: "15",
@@ -244,7 +244,7 @@ const preguntas = [
             "¡Correcto! Si. Reglamento Nacional de Tránsito también sanciona a peatones.",
             "¡Incorrecto! Las multas aplican para todas las vías."
         ],
-        ilustracion: "../img/bg-pregunta-15.png?v2"
+        ilustracion: "https://nuevasnarrativasec.github.io/trivia-peatones/img/bg-pregunta-15.png?v2"
     },
     { 
         numero: "16",
@@ -260,7 +260,7 @@ const preguntas = [
             "¡Incorrecto! Cruzar es responsabilidad del peatón.",
             "¡Incorrecto! No solo debemos cumplir las normas cuando hay policías."
         ],
-        ilustracion: "../img/bg-pregunta-16.png?v2"
+        ilustracion: "https://nuevasnarrativasec.github.io/trivia-peatones/img/bg-pregunta-16.png?v2"
     },
     { 
         numero: "17",
@@ -276,7 +276,7 @@ const preguntas = [
             "¡Correcto! El peatón puede recibir sanciones administrativas y responsabilidades civiles.",
             "¡Incorrecto! El peatón no se salva de ser denunciado si genera un accidente."
         ],
-        ilustracion: "../img/bg-pregunta-17.png?v2"
+        ilustracion: "https://nuevasnarrativasec.github.io/trivia-peatones/img/bg-pregunta-17.png?v2"
     }
 ];
 
