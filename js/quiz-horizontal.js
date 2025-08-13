@@ -486,7 +486,7 @@ function getResultData(correctas, total) {
     };
   } else if (correctas <= t2) {
     return {
-      msg: "Ten cuidado en las calles y repasa las normas ⚠",
+      msg: "Ten cuidado en las calles y repasa las normas.",
       img: "https://nuevasnarrativasec.github.io/trivia-peatones/img/5-9-respuesta.png"
     };
   } else if (correctas <= t3) {
