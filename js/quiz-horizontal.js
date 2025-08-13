@@ -438,13 +438,25 @@ function goToIndex(index, smooth = true) {
 
   currentIndex = index;
   const target = slides[index];
-  target.scrollIntoView({
-    behavior: smooth ? 'smooth' : 'auto',
-    inline: 'start',
-    block: 'nearest'
+
+  // 1) Scroll HORIZONTAL dentro del track hacia el slide objetivo
+  const left = target.offsetLeft; // posición del slide dentro del track
+  track.scrollTo({
+    left,
+    behavior: smooth ? 'smooth' : 'auto'
   });
 
-  // flecha depende de si la actual ya fue respondida
+  // 2) Aire VERTICAL en móvil para que no se corte el número
+  if (window.innerWidth <= 768) {
+    const air = 40; // px de aire arriba
+    const topY = track.getBoundingClientRect().top + window.scrollY;
+    window.scrollTo({
+      top: topY - air,
+      behavior: smooth ? 'smooth' : 'auto'
+    });
+  }
+
+  // habilitar/deshabilitar flecha según estado de la tarjeta visible
   const answered = target.dataset.answered === '1';
   setArrowEnabled(answered);
 }
