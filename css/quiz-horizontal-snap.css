@@ -53,7 +53,7 @@
 
 /* estética rápida */
 .quiz-card h2 {
-  font: 1.6rem/1.2 'new_kansasbold';
+  font: 1.4rem/1.2 'new_kansasbold';
   text-align: center;
   margin: 10px auto;
 }
@@ -120,19 +120,34 @@
 
 /* Flecha amarilla (puedes reemplazar por tu SVG/imagen) */
 #arrowNext {
-  background: url('https://nuevasnarrativasec.github.io/trivia-peatones/img/flecha-avanzar.png') no-repeat center;
+  background: url(../img/flecha-avanzar-2.png) no-repeat center;
   background-size: 100%;
-  border: 0;  
+  border: 0;
   position: fixed;
   right: clamp(12px, 2vw, 20px);
   top: 50%;
   transform: translateY(-50%);
   height: 80px;
   width: 80px;
-  
   font-size: 28px;
   cursor: pointer;
   z-index: 40;
+  transition: transform 0.3s ease;
+}
+
+/* Animación de palpitación */
+@keyframes pulse {
+  0%, 100% {
+    transform: translateY(-50%) scale(1);
+  }
+  50% {
+    transform: translateY(-50%) scale(1.1);
+  }
+}
+
+/* Aplica el pulso solo cuando esté activa */
+#arrowNext.is-active {
+  animation: pulse 1.2s ease-in-out infinite;
 }
 #arrowNext[disabled],
 #arrowNext[aria-disabled="true"] {

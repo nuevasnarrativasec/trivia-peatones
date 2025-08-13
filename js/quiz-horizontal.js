@@ -70,7 +70,7 @@ const preguntas = [
         ],
         ilustracion: "https://nuevasnarrativasec.github.io/trivia-peatones/img/bg-pregunta-4.png?v2"  
     },
-    { 
+    /*{ 
         numero: "5",
         pregunta: "¿Qué debe hacer el peatón si el semáforo peatonal está en rojo?",
         opciones: [
@@ -85,9 +85,9 @@ const preguntas = [
             "¡Incorrecto! Hacer eso es una infracción."
         ],
         ilustracion: "https://nuevasnarrativasec.github.io/trivia-peatones/img/bg-pregunta-5.png?v2"
-    },
+    },*/
     { 
-        numero: "6",
+        numero: "5",
         pregunta: "¿Dónde debe caminar el peatón si no hay acera?",
         opciones: [
             "A. Por el borde izquierdo de la calzada, de frente al tránsito.",
@@ -103,7 +103,7 @@ const preguntas = [
          ilustracion: "https://nuevasnarrativasec.github.io/trivia-peatones/img/bg-pregunta-6.png?v2"
     },
     { 
-        numero: "7",
+        numero: "6",
         pregunta: "¿Cómo debe cruzar un peatón en una vía rápida?",
         opciones: [
             "A. Por un puente o paso peatonal elevado.",
@@ -119,7 +119,7 @@ const preguntas = [
          ilustracion: "https://nuevasnarrativasec.github.io/trivia-peatones/img/bg-pregunta-7.png?v2"
     },
     { 
-        numero: "8",
+        numero: "7",
         pregunta: "¿Qué debe hacer un peatón antes de cruzar una calle sin semáforo?",
         opciones: [
             "A. Mirar a ambos lados y asegurarse de que puede pasar.",
@@ -135,7 +135,7 @@ const preguntas = [
          ilustracion: "https://nuevasnarrativasec.github.io/trivia-peatones/img/bg-pregunta-8.png?v2" 
     },
     { 
-        numero: "9",
+        numero: "8",
         pregunta: "¿Qué significa una señal con figura de peatón cruzando?",
         opciones: [
             "A. Prohibido el paso de peatones.",
@@ -151,7 +151,7 @@ const preguntas = [
          ilustracion: "https://nuevasnarrativasec.github.io/trivia-peatones/img/bg-pregunta-9.png?v2" 
     },
     { 
-        numero: "10",
+        numero: "9",
         pregunta: "¿Es correcto caminar por ciclovías?",
         opciones: [
             "A. Sí, si no vienen bicicletas.",
@@ -167,7 +167,7 @@ const preguntas = [
         ilustracion: "https://nuevasnarrativasec.github.io/trivia-peatones/img/bg-pregunta-10.png?v2"
     },
     { 
-        numero: "11",
+        numero: "10",
         pregunta: "¿Qué debe hacer un peatón si el semáforo peatonal está en verde parpadeando?",
         opciones: [
             "A. Empezar a cruzar de inmediato.",
@@ -183,7 +183,7 @@ const preguntas = [
          ilustracion: "https://nuevasnarrativasec.github.io/trivia-peatones/img/bg-pregunta-11.png?v2" 
     },
     { 
-        numero: "12",
+        numero: "11",
         pregunta: "¿Dónde debe esperar el peatón para cruzar una calle?",
         opciones: [
             "A. En la acera, antes de la calzada.",
@@ -199,7 +199,7 @@ const preguntas = [
         ilustracion: "https://nuevasnarrativasec.github.io/trivia-peatones/img/bg-pregunta-12.png?v2" 
     },
     { 
-        numero: "13",
+        numero: "12",
         pregunta: "¿Qué debe hacer un peatón al bajar de un taxi en plena vía?",
         opciones: [
             "A. Abrir la puerta sin mirar.",
@@ -215,7 +215,7 @@ const preguntas = [
         ilustracion: "https://nuevasnarrativasec.github.io/trivia-peatones/img/bg-pregunta-13.png?v2" 
     },
     { 
-        numero: "14",
+        numero: "13",
         pregunta: "¿Qué significa una señal con un niño corriendo?",
         opciones: [
             "A. Advertencia de zona escolar o de juego.",
@@ -231,7 +231,7 @@ const preguntas = [
         ilustracion: "https://nuevasnarrativasec.github.io/trivia-peatones/img/bg-pregunta-14.png?v2"
     },
     { 
-        numero: "15",
+        numero: "14",
         pregunta: "¿Existen infracciones de tránsito para peatones en el Perú?",
         opciones: [
             "A. No, solo los conductores pueden recibir multas.",
@@ -247,7 +247,7 @@ const preguntas = [
         ilustracion: "https://nuevasnarrativasec.github.io/trivia-peatones/img/bg-pregunta-15.png?v2"
     },
     { 
-        numero: "16",
+        numero: "15",
         pregunta: "¿Puede ser multado un peatón por cruzar fuera de la zona de cruce?",
         opciones: [
             "A. Sí, porque pone en riesgo su seguridad y la de otros.",
@@ -263,7 +263,7 @@ const preguntas = [
         ilustracion: "https://nuevasnarrativasec.github.io/trivia-peatones/img/bg-pregunta-16.png?v2"
     },
     { 
-        numero: "17",
+        numero: "16",
         pregunta: "¿Qué pasa si un peatón provoca un accidente por imprudencia?",
         opciones: [
             "A. No pasa nada, el conductor siempre es culpable.",
@@ -414,17 +414,17 @@ function handleSelect(slide, button, optionIndex) {
 
   slide.dataset.answered = '1';
 
-  // 🔹 Scroll suave hacia el mensaje si estamos en pantallas pequeñas
-if (window.innerWidth <= 768) {
-  setTimeout(() => {
-    const offset = 120; // píxeles desde el top
-    const elementTop = p.getBoundingClientRect().top + window.scrollY;
-    window.scrollTo({
-      top: elementTop - offset,
-      behavior: 'smooth'
-    });
-  }, 150);
-}
+    // 🔹 Scroll suave hacia el mensaje si estamos en pantallas pequeñas
+    /*if (window.innerWidth <= 768) {
+        setTimeout(() => {
+            const offset = 120; // píxeles desde el top
+            const elementTop = p.getBoundingClientRect().top + window.scrollY;
+            window.scrollTo({
+            top: elementTop - offset,
+            behavior: 'smooth'
+            });
+        }, 150);
+    }*/
 
   // activar flecha para avanzar
   setArrowEnabled(true);
@@ -483,13 +483,13 @@ function getResultMessage(correctas, total) {
   const t3 = Math.floor(total * 0.85); // ~85%  -> con 17 => 14
 
   if (correctas <= t1) {
-    return "Eres un ciudadano en proceso de aprender. ¡Sigue practicando!";
+    return "Mejor quédate en casa ✋";
   } else if (correctas <= t2) {
-    return "Eres un ciudadano que sabe un poco más, vas por buen camino.";
+    return "Ten cuidado en las calles y repasa las normas ⚠";
   } else if (correctas <= t3) {
-    return "¡Muy bien! Eres un ciudadano responsable y bien informado.";
+    return "¡Eres un peatón informado y responsable! 🤗";
   } else {
-    return "¡Excelente! Eres un ciudadano ejemplar. ¡Aplausos!";
+    return "¡Eres un peatón informado y responsable! 🤗";
   }
 }
 
@@ -535,13 +535,21 @@ function resetQuiz() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Tu inicialización del quiz
   renderQuiz();
 
   const arrow = document.getElementById('arrowNext');
   if (arrow) arrow.addEventListener('click', nextCard);
 
-  // re-ubicar al redimensionar (mantiene alineación exacta)
   window.addEventListener('resize', () => {
     goToIndex(currentIndex, false);
   });
+
+  // 🔹 Forzar scroll al top al cargar
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: 'auto' // o 'smooth' si quieres animado
+  });
 });
+
