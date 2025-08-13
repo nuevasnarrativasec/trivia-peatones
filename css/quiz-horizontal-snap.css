@@ -119,16 +119,16 @@
 
 /* Flecha amarilla (puedes reemplazar por tu SVG/imagen) */
 #arrowNext {
+  background: url('https://nuevasnarrativasec.github.io/trivia-peatones/img/flecha-avanzar.png') no-repeat center;
+  background-size: 100%;
+  border: 0;  
   position: fixed;
   right: clamp(12px, 2vw, 20px);
   top: 50%;
   transform: translateY(-50%);
-  height: 64px;
-  width: 64px;
-  border-radius: 14px;
-  border: 0;
-  background: #ffcf33;
-  box-shadow: 0 5px 18px rgba(0,0,0,.18);
+  height: 80px;
+  width: 80px;
+  
   font-size: 28px;
   cursor: pointer;
   z-index: 40;
